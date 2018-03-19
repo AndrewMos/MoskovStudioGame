@@ -98,7 +98,7 @@ if (windowWidth < windowHeight) {
     
     var xmlhttp = new XMLHttpRequest();
 
-var url = "https://YOUR_URL_HERE/highscore/" + score  +
+var url = "https://moskovstudiogame.herokuapp.com/highscore/" + score  +
 
 "?id=" + playerid;
 
