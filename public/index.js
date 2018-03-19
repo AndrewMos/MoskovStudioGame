@@ -1,4 +1,8 @@
 // ВСЕ ПРАВА ПРЕНАДЛЕЖАТ github.com/AndrewMos
+var url = new URL(location.href);
+
+var playerid = url.searchParams.get("id");
+
 
 var rectY = 100;
    rectSpeed = 2;
@@ -89,9 +93,26 @@ if (windowWidth < windowHeight) {
 
  if (ellX < 10) {
     gameOver = 1;
-    score = ('Your score: ' + score + '  Press any key');
-         canv.background(160);
+    
+    
+    
+    var xmlhttp = new XMLHttpRequest();
 
+var url = "https://YOUR_URL_HERE/highscore/" + score  +
+
+"?id=" + playerid;
+
+xmlhttp.open("GET", url, true);
+
+xmlhttp.send();
+    
+    
+    score = ('Your score: ' + score + '  Press any key');
+      
+    canv.background(160);
+    
+   
+    
   noLoop();
   }
 
