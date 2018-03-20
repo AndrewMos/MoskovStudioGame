@@ -21,6 +21,7 @@ bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. 
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.onText(/hi/, (msg) => bot.sendMessage(msg.from.id, "Hello world!"));
 bot.onText(/clear/, (msg) => bot.setGameScore(msg.from.id, 0, [{force: True }]));
+bot.onText(/test/, (msg) => bot.sentMessage(msg.from.id, "Ups " + req.query.id));
 
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
