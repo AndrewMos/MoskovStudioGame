@@ -19,21 +19,14 @@ const queries = {};
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.onText(/hi/, (msg) => bot.sendMessage(msg.from.id, "Hello world!"));
-bot.onText(/clear/, (msg) =>   bot.sendMessage(msg.from.id, "Hi " + msg.chat.id + " " + msg.message_id));   /*bot.setGameScore(msg.from.id, 0, function() {
-     let query = queries[req.query.id];
+bot.onText(/clear/, (msg) =>  /* bot.sendMessage(msg.from.id, "Hi " + msg.chat.id + " " + msg.message_id)); */  bot.setGameScore(msg.from.id, 0, function() {
     let options;
-    if (query.message) {
         options = {
-            chat_id: query.message.chat.id,
-            message_id: query.message.message_id
+            chat_id: msg.chat.id,
+            message_id: msg.message_id
         };
-    } else {
-        options = {
-            inline_message_id: query.inline_message_id
-        };
-    }
     return options;
-})  );*/
+})  );
 
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
