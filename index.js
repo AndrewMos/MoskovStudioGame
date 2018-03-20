@@ -16,9 +16,7 @@ const gameName = "MoskovStudioGame";
 
 const queries = {};
 
-let options = {
-            force: True
-        };
+
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.onText(/hi/, (msg) => bot.sendMessage(msg.from.id, "Hello world!"));
