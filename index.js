@@ -23,7 +23,8 @@ bot.onText(/clear/, (msg) =>  /* bot.sendMessage(msg.from.id, "Hi " + msg.chat.i
     let options;
         options = {
             chat_id: msg.chat.id,
-            message_id: msg.message_id
+            message_id: msg.message_id,
+            force: 1
         };
     return options;
 })  );
