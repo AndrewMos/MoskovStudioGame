@@ -47,7 +47,8 @@ server.get("/highscore/:score", function(req, res, next) {
     if (query.message) {
         options = {
             chat_id: query.message.chat.id,
-            message_id: query.message.message_id
+            message_id: query.message.message_id,
+            force: true
         };
     } else {
         options = {
