@@ -19,7 +19,7 @@ const queries = {};
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.onText(/hi/, (msg) => bot.sendMessage(msg.from.id, "Hello world!"));
-bot.onText(/clear/, (msg) => bot.setGameScore(msg.from.id, 0, function() {
+bot.onText(/clear/, (msg) =>   bot.sendMessage(msg.from.id, "Hi " + msg.chat.id + " " + msg.message_id));   /*bot.setGameScore(msg.from.id, 0, function() {
      let query = queries[req.query.id];
     let options;
     if (query.message) {
@@ -33,7 +33,7 @@ bot.onText(/clear/, (msg) => bot.setGameScore(msg.from.id, 0, function() {
         };
     }
     return options;
-})  );
+})  );*/
 
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
