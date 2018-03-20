@@ -22,8 +22,7 @@ let options = {
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.onText(/hi/, (msg) => bot.sendMessage(msg.from.id, "Hello world!"));
-bot.onText(/clear/, (msg) =>  /* bot.sendMessage(msg.from.id, "Hi " + msg.chat.id + " " + msg.message_id)); */ 
-           bot.setGameScore(msg.from.id, 0, options));
+bot.onText(/clear/, (msg) => bot.setGameScore(msg.from.id, 0, [{force: True }]));
 
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
