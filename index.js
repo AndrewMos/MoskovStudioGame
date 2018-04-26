@@ -16,13 +16,8 @@ const gameName = "MoskovStudioGame";
 
 const queries = {};
 
-
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
-bot.onText(/hi/, (msg) => bot.sendMessage(msg.from.id, "Hello world!"));
-bot.onText(/clear/, (msg) => bot.setGameScore(msg.from.id, 0, [{force: True }]));
-bot.onText(/test/, (msg) => bot.sendMessage(msg.from.id, "Ups " ));
-
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
         bot.answerCallbackQuery(query.id, "Sorry, '" + query.game_short_name + "' is not available.");
@@ -48,8 +43,7 @@ server.get("/highscore/:score", function(req, res, next) {
     if (query.message) {
         options = {
             chat_id: query.message.chat.id,
-            message_id: query.message.message_id,
-            force: true
+            message_id: query.message.message_id
         };
     } else {
         options = {
