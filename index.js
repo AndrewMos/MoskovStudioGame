@@ -4,7 +4,7 @@ const path = require("path");
 
 const TelegramBot = require("node-telegram-bot-api");
 
-const TOKEN = "567556684:AAHxtGqzRMvLOQQUd0nXuaZn2OFMAKNU-f8";
+const TOKEN = "542435999:AAGc2SbUeZuj2K5Ie1FJzf8W9UzORDc1-LY";
 
 const server = express();
 
@@ -18,6 +18,8 @@ const queries = {};
 
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This bot is game bot. Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
+
+/*
 bot.on("callback_query", function (query) {
     if (query.game_short_name !== gameName) {
         bot.answerCallbackQuery(query.id, "Sorry, '" + query.game_short_name + "' is not available.");
@@ -54,3 +56,4 @@ server.get("/highscore/:score", function(req, res, next) {
         function (err, result) {});
 });
 server.listen(port);
+*/
